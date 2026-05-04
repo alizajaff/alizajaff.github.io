@@ -1,0 +1,204 @@
+/*	
+	Author: Mikey Jaffee
+	File Name: styles.css
+	Date: 4/20/26
+*/
+
+/* =========================
+   CSS RESET
+========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: #e2e8f0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* =========================
+   FONTS
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Inter:wght@300;400;600&display=swap');
+
+/* =========================
+   VARIABLES
+========================= */
+
+:root {
+    --primary: #22c55e;
+    --secondary: #38bdf8;
+    --accent: #f472b6;
+    --card-bg: #1e293b;
+    --text-light: #e2e8f0;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    padding: 20px;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    border-bottom: 4px dashed var(--accent);
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #020617;
+    border-bottom: 2px solid var(--secondary);
+}
+
+nav a {
+    color: var(--text-light);
+    padding: 14px 20px;
+    transition: 0.3s;
+    border-right: 1px solid #334155;
+}
+
+nav a:hover {
+    background-color: var(--secondary);
+    color: #020617;
+    border-radius: 8px;
+}
+
+/* =========================
+   MAIN LAYOUT (IMAGE + LABS)
+========================= */
+
+.lab-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* LEFT IMAGE */
+.side-image {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+/* RIGHT SIDE GRID */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+
+    flex: 1;
+    min-width: 0;
+}
+
+/* =========================
+   LAB CARDS
+========================= */
+
+.card {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 12px;
+
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--card-bg), var(--card-bg)),
+                      linear-gradient(45deg, var(--primary), var(--accent), var(--secondary));
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 25px rgba(56, 189, 248, 0.6);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--secondary);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 10px;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: #020617;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: linear-gradient(45deg, var(--accent), var(--secondary));
+    color: white;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #020617;
+    border-top: 3px dotted var(--primary);
+    font-size: 0.9rem;
+}
