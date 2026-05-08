@@ -1,0 +1,11 @@
+Question 14: Is it possible to style captions?
+
+Yes. Captions can be styled with the CSS ::cue pseudo-element. Browser support can vary, but it can style basic caption text such as color, background color, and font size.
+
+Example:
+
+video::cue {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.75);
+    font-size: 1.1em;
+}
